@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="god-rays"></div>
+
+    <header class="site-header">
+        <h1 class="mythic-title">Tournement</h1>
+        <div id="bracket-controls" class="controls-panel" hidden>
+            <div class="controls">
+                <input type="text" id="player-input" placeholder="Kämpfer Name..." autocomplete="off">
+                <button id="add-player-btn" class="btn-primary">Hinzufügen</button>
+                <button id="generate-bracket-btn" class="btn-play">PLAY</button>
+                <button id="reset-btn" class="btn-secondary">Reset</button>
+            </div>
+            <p id="player-count" class="player-count" aria-live="polite">0 Kämpfer beigetreten</p>
+            <p id="simulation-status" class="simulation-status" aria-live="polite"></p>
+        </div>
+    </header>
+
+    <main>
+        <section id="home-view" class="app-view active-view">
+            <div class="home-copy">
+                <p class="eyebrow">TOURNEMENT / ARENA HUB</p>
+                <h3>Was möchtest du heute ausspielen?</h3>
+                <p>Wähle einen Bereich und starte direkt mit deiner Veranstaltung.</p>
+            </div>
+            <div class="hub-grid">
+                <button id="open-bracket-btn" class="hub-card" type="button">
+                    <span class="hub-card-index">01</span>
+                    <span class="hub-card-icon">⚔</span>
+                    <strong>Turnierbaum</strong>
+                    <span>Spieler eintragen, Paarungen auslosen und Runde für Runde entscheiden.</span>
+                    <span class="hub-card-link">Arena öffnen <span aria-hidden="true">→</span></span>
+                </button>
+                <button id="open-score-btn" class="hub-card" type="button">
+                    <span class="hub-card-index">02</span>
+                    <span class="hub-card-icon">✦</span>
+                    <strong>Team-Punkte</strong>
+                    <span>Zwei oder vier Teams anlegen und Punkte live sammeln.</span>
+                    <span class="hub-card-link">Scoreboard öffnen <span aria-hidden="true">→</span></span>
+                </button>
+            </div>
+        </section>
+
+        <section id="score-view" class="app-view" hidden>
+            <div class="section-heading">
+                <button id="score-back-btn" class="back-button" type="button">← Hauptzentrale</button>
+                <p class="eyebrow">TOURNEMENT / TEAM SCORE</p>
+                <h3>Team-Punkte</h3>
+                <p>Lege ein Punktesystem für zwei oder vier Teams an.</p>
+            </div>
+            <div class="score-setup">
+                <label for="team-count-select">Anzahl Teams</label>
+                <select id="team-count-select">
+                    <option value="2">2 Teams</option>
+                    <option value="4">4 Teams</option>
+                </select>
+                <button id="create-teams-btn" class="btn-play" type="button">Teams starten</button>
+            </div>
+            <button id="manage-team-players-btn" class="manage-players-btn" type="button" hidden>Spieler verwalten</button>
+            <button id="end-teams-btn" class="end-teams-btn" type="button" hidden>Teams beenden</button>
+            <div id="team-board" class="team-board" hidden></div>
+            <div id="team-roster" class="team-roster">
+                <div class="roster-heading">
+                    <div>
+                        <p class="eyebrow">TEAM ROSTER</p>
+                        <h4>Spieler zuweisen</h4>
+                    </div>
+                    <p>Neue Spieler ergänzen oder die automatische Zuordnung ändern.</p>
+                </div>
+                <div class="roster-add">
+                    <input id="team-player-input" type="text" placeholder="Spielername..." autocomplete="off">
+                    <button id="add-team-player-btn" class="btn-primary" type="button">Spieler hinzufügen</button>
+                </div>
+                <div id="team-roster-list" class="team-roster-list"></div>
+            </div>
+        </section>
+
+        <section id="bracket-view" class="app-view" hidden>
+            <div class="section-heading bracket-heading">
+                <button id="bracket-back-btn" class="back-button" type="button">← Hauptzentrale</button>
+                <button id="end-bracket-btn" class="end-bracket-btn" type="button">Turnier beenden</button>
+            </div>
+        <div class="bracket-wrapper">
+            <svg id="bracket-lines" class="bracket-lines" aria-hidden="true"></svg>
+            <div class="view-controls is-collapsed" aria-label="Baumansicht">
+                <button id="toggle-view-controls-btn" type="button" title="Werkzeuge ein- oder ausblenden">Werkzeuge</button>
+                <button id="zoom-out-btn" type="button" title="Herauszoomen">−</button>
+                <span id="zoom-level">100%</span>
+                <button id="zoom-in-btn" type="button" title="Hineinzoomen">+</button>
+                <button id="zoom-reset-btn" type="button" title="Optimale Ansicht">Ansicht</button>
+                <button id="remove-bracket-player-btn" type="button">Spieler entfernen</button>
+            </div>
+            
+            <div id="lobby-container">
+                <div class="placeholder-text">
+                    <h3>Die Arena ruft</h3>
+                    <p>Füge Kämpfer hinzu. Das Bracket füllt sich von außen nach innen zum finalen Zentrum.</p>
+                </div>
+                <div id="lobby" class="lobby">
+                </div>
+            </div>
+
+            <div class="bracket" id="bracket-container">
+            </div>
+
+        </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
