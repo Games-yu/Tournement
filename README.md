@@ -1,73 +1,72 @@
 # Tournement
 
-> Eine schnelle, visuelle Turnier- und Team-Punkte-Zentrale fuer Events, Freundesrunden und Wettbewerbe.
+> A fast, visual tournament and team-scoring hub for events, friendly gatherings, and competitions.
 
-## Was ist Tournement?
+## What is Tournement?
 
-Tournement ist eine browserbasierte Event-Oberflaeche fuer faire Auslosungen, manuelle Gewinnerauswahl und Live-Teamwertung. Alles laeuft direkt im Browser, ohne Framework und ohne Build-Schritt.
+Tournement is a browser-based event interface for fair bracket generation, manual winner selection, and live team scoring. Everything runs directly in the browser—no frameworks, no build steps required.
 
 ## Features
 
-### Turnierbaum
+### Tournament Bracket
 
-- Zufallsauslosung fuer jede neue Runde
-- Echte 1-gegen-1-Paarungen, soweit die Spielerzahl es erlaubt
-- Freilose bei ungeraden oder unpassenden Spielerzahlen
-- Gewinner per Klick auswaehlen
-- Champion-Anzeige mit dauerhaftem Titel und Siegername
-- Spieler vor und waehrend des Turniers entfernen
-- Zoom per Mausrad und Buttons
-- Baum horizontal und vertikal verschieben
-- Dynamische Verbindungslinien, die an den Matchboxen bleiben
-- Turnier jederzeit sauber beenden und zur Zentrale zurueckkehren
+- Random draw for each new round
+- True 1-on-1 matchups (subject to player count)
+- Byes for odd or incompatible player counts
+- Select winners with a single click
+- Champion display showing the title and winner's name
+- Remove players before or during the tournament
+- Zoom using the mouse wheel or buttons
+- Pan the bracket horizontally and vertically
+- Dynamic connecting lines that stay anchored to match boxes
+- Cleanly end the tournament and return to the main hub at any time
 
-### Team-Punkte
+### Team Scoring
 
-- 2 oder 4 Teams
-- Spieler vor dem Start hinzufuegen und entfernen
-- Spieler werden beim Start gleichmaessig verteilt
-- Spieler jederzeit anderen Teams zuweisen
-- Teamnamen bearbeiten
-- Punkte mit `-1`, `+1` und `+5` veraendern
-- Teamrunde beenden und alle Daten zuruecksetzen
-- Eigener Scrollbereich fuer grosse Spielerkader
+- 2 or 4 teams
+- Add and remove players before starting
+- Players distributed evenly upon startup
+- Reassign players to different teams at any time
+- Edit team names
+- Adjust scores by `-1`, `+1`, or `+5`
+- End the team round and reset all data
+- Dedicated scroll area for large player rosters
 
-## Schnellstart
+## Quick Start
 
-1. Repository herunterladen oder klonen.
-2. `index.html` im Browser oeffnen.
-3. Einen Bereich auswaehlen.
-4. Spieler hinzufuegen.
-5. Turnierbaum oder Teams starten.
+1. Download or clone the repository.
+2. Open `index.html` in your browser.
+3. Select a mode.
+4. Add players.
+5. Start the tournament bracket or team mode.
 
-Alternativ funktioniert das Projekt direkt mit einem beliebigen lokalen Static-Server.
+Alternatively, the project works directly with any local static server.
 
 ## GitHub Pages
 
-Fuer eine oeffentliche Version auf GitHub:
+To host a public version on GitHub:
 
-1. Repository oeffnen.
-2. `Settings` → `Pages` aufrufen.
-3. `Deploy from a branch` auswaehlen.
-4. Branch `main` und Ordner `/root` setzen.
-5. Speichern und die erzeugte Pages-Adresse oeffnen.
+1. Open the repository.
+2. Go to `Settings` → `Pages`.
+3. Select `Deploy from a branch`.
+4. Set the branch to `main` and the folder to `/root`. 5. Save and open the generated Pages URL.
 
-## Projektstruktur
+## Project Structure
 
 ```text
-index.html   Hauptoberflaeche und Ansichten
-script.js    Turnier-, Team- und Interaktionslogik
-style.css    Layout, Animationen und responsive Darstellung
+index.html   Main interface and views
+script.js    Tournament, team, and interaction logic
+style.css    Layout, animations, and responsive design
 ```
 
-## Technik
+## Technology
 
 - HTML5
 - CSS3
 - Vanilla JavaScript
-- SVG fuer dynamische Turnierlinien
-- Keine Build-Tools oder Abhaengigkeiten
+- SVG for dynamic tournament brackets
+- No build tools or dependencies
 
-## Lizenz
+## License
 
-Dieses Projekt ist fuer private und nichtkommerzielle Event-Nutzung gedacht.
+This project is intended for private and non-commercial event use.
